@@ -36,7 +36,5 @@ class UserRepository implements UserRepositoryInterface
         if ($flush) {
             $this->entityManager->flush();
         }
-
-//        return $user;
     }
 }

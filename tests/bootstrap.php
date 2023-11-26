@@ -16,10 +16,9 @@ if (file_exists(dirname(__DIR__).'/config/bootstrap.php')) {
 if ($_SERVER['APP_DEBUG']) {
     umask(0000);
 }
-//$isUnitTestsuiteBeingRun = in_array('--testsuite=Unit', $argv);
 
-//if ($isUnitTestsuiteBeingRun === false) {
-    $kernelClass = $_ENV['KERNEL_CLASS'];
+//apply migration to DB and loads fixtuers
+$kernelClass = $_ENV['KERNEL_CLASS'];
 $kernel = new $kernelClass('test', true);
 $kernel->boot();
 
@@ -30,7 +29,6 @@ updateDoctrineSchema($application);
 loadDatabaseFixtures($application);
 
 $kernel->shutdown();
-//}
 
 function updateDoctrineSchema(Application $application): void
 {
