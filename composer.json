@@ -7,14 +7,24 @@
         "php": ">=8.1",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "doctrine/doctrine-bundle": "^2.11",
+        "doctrine/doctrine-migrations-bundle": "^3.3",
+        "doctrine/orm": "^2.17",
+        "nesbot/carbon": "^2.71",
         "symfony/console": "6.3.*",
         "symfony/dotenv": "6.3.*",
         "symfony/flex": "^2",
         "symfony/framework-bundle": "6.3.*",
+        "symfony/monolog-bundle": "^3.10",
         "symfony/runtime": "6.3.*",
         "symfony/yaml": "6.3.*"
     },
     "require-dev": {
+        "hautelook/alice-bundle": "^2.12",
+        "phpunit/phpunit": "^9.5",
+        "symfony/browser-kit": "6.3.*",
+        "symfony/css-selector": "6.3.*",
+        "symfony/phpunit-bridge": "^6.3"
     },
     "config": {
         "allow-plugins": {
