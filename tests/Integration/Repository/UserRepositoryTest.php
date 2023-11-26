@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Tests\integration\Repository;
+namespace App\Tests\Integration\Repository;
 
 use App\Entity\User;
 use App\Entity\UserInterface;
 use App\Repository\UserRepositoryInterface;
+use App\Tests\Utilities\KernelTestCase;
 use Carbon\Carbon;
 use Faker\Factory;
-use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 final class UserRepositoryTest extends KernelTestCase
 {

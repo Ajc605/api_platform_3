@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Tests\unit\Factory;
+namespace App\Tests\Unit\Factory;
 
 use App\Entity\UserInterface;
 use App\Exceptions\Factory\UserFactoryException;

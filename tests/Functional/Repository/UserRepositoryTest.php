@@ -1,17 +1,14 @@
 <?php
 
-namespace App\Tests\functional\Repository;
+namespace App\Tests\Functional\Repository;
 
 use App\Entity\UserInterface;
 use App\Repository\UserRepositoryInterface;
+use App\Tests\Utilities\KernelTestCase;
 use Carbon\Carbon;
-use Hautelook\AliceBundle\PhpUnit\RefreshDatabaseTrait;
-use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 final class UserRepositoryTest extends KernelTestCase
 {
-    use RefreshDatabaseTrait;
-
     private UserRepositoryInterface $sut;
 
     protected function setUp(): void
