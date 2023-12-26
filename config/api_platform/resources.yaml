@@ -1,0 +1,21 @@
+resources:
+  App\Entity\User:
+    operations:
+      ApiPlatform\Metadata\GetCollection: ~
+      ApiPlatform\Metadata\Get: ~
+      ApiPlatform\Metadata\Post: ~
+      ApiPlatform\Metadata\Put:
+        status: 204
+    input: App\Dto\UserInputDto
+    processor: App\StateProcessor\UserStateProcessor
+    normalizationContext:
+      groups: ['user:read']
+
+  App\Dto\UserOutputDto:
+    class: App\Entity\User
+    shortName: UserDto
+    operations:
+      ApiPlatform\Metadata\GetCollection: ~
+    provider: ApiPlatform\Doctrine\Orm\State\CollectionProvider
+    stateOptions:
+      entityClass: App\Entity\User

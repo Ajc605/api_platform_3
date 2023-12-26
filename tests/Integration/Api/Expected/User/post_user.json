@@ -1,0 +1,11 @@
+{
+  "@context": @string@,
+  "@id": @string@,
+  "@type": "User",
+  "firstName": "Jim",
+  "lastName": "Rick",
+  "age": 55,
+  "email": "email@email",
+  "createdAt": @string@,
+  "modifiedAt": @string@
+}

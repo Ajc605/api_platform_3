@@ -10,11 +10,11 @@ use Doctrine\Persistence\ObjectRepository;
 class UserRepository implements UserRepositoryInterface
 {
     public function __construct(
-        private EntityManagerInterface $entityManager
+        protected EntityManagerInterface $entityManager
     ) {
     }
 
-    private function getRepository(): ObjectRepository
+    protected function getRepository(): ObjectRepository
     {
         return $this->entityManager->getRepository(User::class);
     }

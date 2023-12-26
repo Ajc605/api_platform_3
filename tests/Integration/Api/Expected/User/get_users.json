@@ -1,0 +1,28 @@
+{
+  "@context": @string@,
+  "@id": "/users",
+  "@type": "hydra:Collection",
+  "hydra:totalItems": 2,
+  "hydra:member": [
+    {
+      "@id": @string@,
+      "@type": "User",
+      "firstName": "John",
+      "lastName": "Smith",
+      "age": 37,
+      "email": "johnSmith@email.com",
+      "createdAt": @string@,
+      "modifiedAt": @string@
+    },
+    {
+      "@id": @string@,
+      "@type": "User",
+      "firstName": "Lilly",
+      "lastName": "Young",
+      "age": 18,
+      "email": "lillyYoung@email.com",
+      "createdAt": @string@,
+      "modifiedAt": @string@
+    }
+  ]
+}

@@ -24,17 +24,20 @@ final class UserFactoryTest extends TestCase
         $firstName = 'John';
         $lastName = 'smith';
         $age = 37;
+        $email = 'email@email.com';
 
         $user = $this->sut->createUser(
             $firstName,
             $lastName,
-            $age
+            $age,
+            $email,
         );
 
         $this->assertInstanceOf(UserInterface::class, $user);
         $this->assertSame($firstName, $user->getFirstName());
         $this->assertSame($lastName, $user->getLastName());
         $this->assertSame($age, $user->getAge());
+        $this->assertSame($email, $user->getEmail());
     }
 
     public function test_create_user_with_faker(): void
@@ -44,6 +47,7 @@ final class UserFactoryTest extends TestCase
         $this->assertInstanceOf(UserInterface::class, $user);
         $this->assertIsString($user->getFirstName());
         $this->assertIsString($user->getLastName());
+        $this->assertIsString($user->getEmail());
         $this->assertIsInt($user->getAge());
     }
 
@@ -111,16 +115,19 @@ final class UserFactoryTest extends TestCase
                     UserFactoryInterface::FIRST_NAME_KEY => 'John',
                     UserFactoryInterface::LAST_NAME_KEY => 'Smith',
                     UserFactoryInterface::AGE_KEY => 38,
+                    UserFactoryInterface::EMAIL_KEY => 'email',
                 ],
                 [
                     UserFactoryInterface::FIRST_NAME_KEY => 'Lilly',
                     UserFactoryInterface::LAST_NAME_KEY => 'Young',
                     UserFactoryInterface::AGE_KEY => 18,
+                    UserFactoryInterface::EMAIL_KEY => 'email',
                 ],
                 [
                     UserFactoryInterface::FIRST_NAME_KEY => 'Joe',
                     UserFactoryInterface::LAST_NAME_KEY => 'Blogs',
                     UserFactoryInterface::AGE_KEY => 25,
+                    UserFactoryInterface::EMAIL_KEY => 'email',
                 ],
             ]
         ];

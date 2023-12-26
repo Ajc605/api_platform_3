@@ -84,8 +84,9 @@ final class UserRepositoryTest extends KernelTestCase
         $firstName = $faker->firstName();
         $lastName = $faker->lastName();
         $age = $faker->numberBetween(18, 99);
+        $email = $faker->email();
 
-        $user = User::create($firstName, $lastName, $age);
+        $user = User::create($firstName, $lastName, $age, $email);
 
         $this->sut->save($user);
 

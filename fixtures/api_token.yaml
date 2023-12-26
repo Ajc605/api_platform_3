@@ -1,0 +1,4 @@
+App\Entity\ApiToken:
+  user_1_token:
+    user: '@user_1'
+    expiresAt: '<datetime("3023-01-01")>'

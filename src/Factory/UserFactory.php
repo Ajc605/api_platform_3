@@ -17,9 +17,13 @@ final class UserFactory implements UserFactoryInterface
         $this->faker = Factory::create();
     }
 
-    public function createUser(string $firstName, string $lastName, int $age): UserInterface
-    {
-        return User::create($firstName, $lastName, $age);
+    public function createUser(
+        string $firstName,
+        string $lastName,
+        int $age,
+        string $email
+    ): UserInterface{
+        return User::create($firstName, $lastName, $age, $email);
     }
 
     public function createUserWithFaker(): UserInterface
@@ -28,6 +32,7 @@ final class UserFactory implements UserFactoryInterface
             $this->faker->firstName(),
             $this->faker->lastName()    ,
             $this->faker->numberBetween(18, 99),
+            $this->faker->email(),
         );
     }
 
@@ -40,6 +45,7 @@ final class UserFactory implements UserFactoryInterface
                 $userData[self::FIRST_NAME_KEY],
                 $userData[self::LAST_NAME_KEY],
                 $userData[self::AGE_KEY],
+                $userData[self::EMAIL_KEY],
             )) {
                 throw new UserFactoryException(sprintf(
                     'Unable to create User, array must have the following keys: %s',
@@ -51,6 +57,7 @@ final class UserFactory implements UserFactoryInterface
                 $userData[self::FIRST_NAME_KEY],
                 $userData[self::LAST_NAME_KEY],
                 $userData[self::AGE_KEY],
+                $userData[self::EMAIL_KEY],
             );
         }
 
